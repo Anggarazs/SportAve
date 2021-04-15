@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
   
 use Illuminate\Http\Request;
+use DB;
    
 class HomeController extends Controller
 {
@@ -32,7 +33,9 @@ class HomeController extends Controller
      */
      public function adminHome()
      {
-         return view('adminHome');
+        $count = DB::table('users')->count();
+        $lapangan = DB::table('data_lapangans')->count();
+        return view('adminHome',compact('count','lapangan'));
      }
      
  }

@@ -14,9 +14,9 @@ class Admin extends Migration
     public function up()
     {
         DB::table('users')->insert(array(
-            'name' => "Anggara Azis Saputra",
-            'email' => "anggara.azis27@gmail.com",
-            'password' => Hash::make('SATE27piring'),
+            'name' => "Muhammad Rizky Al Rachman",
+            'email' => "muhammadrizkyar03@gmail.com",
+            'password' => Hash::make('12345678'),
             'admin' => 1
         ));
     }
