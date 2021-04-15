@@ -33,4 +33,5 @@ Route::get('/admin/datalapangan', [App\Http\Controllers\LapanganController::clas
 Route::get('/admin/createlapangan', [App\Http\Controllers\LapanganController::class, 'create'])->name('dlapangan.create');
 Route::post('/admin/simpan', [App\Http\Controllers\LapanganController::class, 'store'])->name('dlapangan.store');
 Route::get('/admin/editlapangan/{id}', [App\Http\Controllers\LapanganController::class, 'edit'])->name('dlapangan.edit');
+Route::post('/admin/updatelapangan/{id}', [App\Http\Controllers\LapanganController::class, 'update'])->name('dlapangan.update');
 

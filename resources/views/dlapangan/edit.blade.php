@@ -39,7 +39,7 @@
     </div>
 @endif
  
-<form action="{{ route('dlapangan.store') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('dlapangan.update',$dt->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
  
      <div class="row">

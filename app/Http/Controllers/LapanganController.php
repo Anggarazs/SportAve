@@ -52,7 +52,18 @@ class LapanganController extends Controller
     }
     public function update(Request $request,$id)
     {
-        $ubah = dataLapangan::fidorfail($id); 
+        $ubah = dataLapangan::findorfail($id);
+        $awal = $ubah->foto_lapangan;
+        
+        $dt = [
+            'nama' => $request['nama'],
+            'jenis_lapangan' => $request['jenis_lapangan'],
+            'harga' => $request['harga'],
+            'fotp_lapangan' => $awal,
+        ];
+        $request->foto_lapangan->move(public_path().'/img', $awal);
+        $ubah->update($dt);
+        return redirect('/admin/datalapangan')->with('success','Lapangan Edited successfully.');
     }
     public function destroy(dataLapangan $datalapangan)
     {
