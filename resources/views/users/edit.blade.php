@@ -1,6 +1,6 @@
-@extends('admin.template')
+@extends('layouts.app')
  
-@section('konten')
+@section('content')
     <div class="row mt-5 mb-5">
         <div class="col-lg-12 margin-tb">
             <div class="float-left">
@@ -23,7 +23,7 @@
         </div>
     @endif
  
-    <form action="{{ route('users.update',$user->id) }}" method="POST">
+    <form action="{{ route('users.update') }}" method="POST">
         @csrf
         @method('PUT')
          <div class="row">
@@ -38,7 +38,13 @@
                     <strong>Email :</strong>
                     <input type="text" name="email" value="{{ $user->email }}" class="form-control" placeholder="Email">
                 </div>
-            </div>       
+            </div> 
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>alamat :</strong>
+                    <input type="text" name="alamat" value="{{ $user->alamat }}" class="form-control" placeholder="alamat">
+                </div>
+            </div>         
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Update</button>
             </div>

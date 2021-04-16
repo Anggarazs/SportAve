@@ -59,9 +59,11 @@ class LapanganController extends Controller
             'nama' => $request['nama'],
             'jenis_lapangan' => $request['jenis_lapangan'],
             'harga' => $request['harga'],
-            'fotp_lapangan' => $awal,
+            'foto_lapangan' => $awal,
         ];
-        $request->foto_lapangan->move(public_path().'/img', $awal);
+        if($request->hasFile('foto_lapangan')){
+            $request->foto_lapangan->move(public_path().'/img', $awal);
+        }
         $ubah->update($dt);
         return redirect('/admin/datalapangan')->with('success','Lapangan Edited successfully.');
     }

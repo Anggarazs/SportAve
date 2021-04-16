@@ -15,10 +15,10 @@ class CreateDataLapangansTable extends Migration
     {
         Schema::create('data_lapangans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama')->nullable();
+            $table->string('nama');
             $table->enum('jenis_lapangan', ['rumput', 'matras']);
-            $table->integer('harga')->nullable();
-            $table->string('foto_lapangan')->nullable();
+            $table->integer('harga');
+            $table->string('foto_lapangan')->nullable();;
             $table->timestamps();
         });
     }

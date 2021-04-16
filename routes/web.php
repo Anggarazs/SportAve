@@ -23,10 +23,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home/changepassword', [App\Http\Controllers\ChangePasswordController::class, 'index']);
-Route::post('/home/changepassword', [App\Http\Controllers\ChangePasswordController::class, 'store'])->name('change.password');
+Route::get('/changepassword', [App\Http\Controllers\ChangePasswordController::class, 'index']);
+Route::post('/welcome', [App\Http\Controllers\ChangePasswordController::class, 'store'])->name('change.password');
+
+
 Route::get('admin/dashboard', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('admin');
 Route::resource('admin/users', UserController::class);
+Route::get('/edituser', [App\Http\Controllers\UserController::class, 'edit'])->name('users.edit');
+Route::put('/edituser', [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
 
 Route::resource('admin/datalapangan', LapanganController::class);
 Route::get('/admin/datalapangan', [App\Http\Controllers\LapanganController::class, 'index']);

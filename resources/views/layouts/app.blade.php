@@ -59,9 +59,12 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                    <a href="{{ url('/home/changepassword/') }}" class="dropdown-item">
+                                    <a href="{{ url('/changepassword') }}" class="dropdown-item">
                                             Change Passwords
                                     </a>
+                                    <a href="{{ url('edituser') }}" class="dropdown-item">
+                                         Edit Profile
+                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

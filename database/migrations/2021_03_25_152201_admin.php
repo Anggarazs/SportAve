@@ -15,8 +15,16 @@ class Admin extends Migration
     {
         DB::table('users')->insert(array(
             'name' => "Muhammad Rizky Al Rachman",
+            'alamat'=> "Jalan sejahtera",
             'email' => "muhammadrizkyar03@gmail.com",
             'password' => Hash::make('12345678'),
+            'admin' => 1
+        ));
+        DB::table('users')->insert(array(
+            'name' => "admin cadangan",
+            'alamat'=> "Jalan sejahtera",
+            'email' => "admincadangan@gmail.com",
+            'password' => Hash::make('123456789'),
             'admin' => 1
         ));
     }
