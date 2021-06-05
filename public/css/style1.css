@@ -228,6 +228,7 @@ section {
   color: #013289;
   white-space: nowrap;
   transition: 0.3s;
+  margin-right: auto;
 }
 
 .navbar a i {

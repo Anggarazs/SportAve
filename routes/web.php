@@ -26,7 +26,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/changepassword', [App\Http\Controllers\ChangePasswordController::class, 'index']);
 Route::post('/welcome', [App\Http\Controllers\ChangePasswordController::class, 'store'])->name('change.password');
 
-
 Route::get('admin/dashboard', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('admin');
 Route::resource('admin/users', UserController::class);
 Route::get('/edituser', [App\Http\Controllers\UserController::class, 'edit'])->name('users.edit');
@@ -38,4 +37,3 @@ Route::get('/admin/createlapangan', [App\Http\Controllers\LapanganController::cl
 Route::post('/admin/simpan', [App\Http\Controllers\LapanganController::class, 'store'])->name('dlapangan.store');
 Route::get('/admin/editlapangan/{id}', [App\Http\Controllers\LapanganController::class, 'edit'])->name('dlapangan.edit');
 Route::post('/admin/updatelapangan/{id}', [App\Http\Controllers\LapanganController::class, 'update'])->name('dlapangan.update');
-
