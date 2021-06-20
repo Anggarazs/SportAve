@@ -1,7 +1,6 @@
 @extends('admin.template')
  
 @section('konten')
-
 <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -61,7 +60,9 @@
         </tr>
         @endforeach
     </table>
- 
+    <div class="card-footer">
+         {{ $dt->links() }}
+        
+    </div>
 
- 
 @endsection

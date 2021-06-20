@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>SportAve</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -21,19 +21,25 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar navbar-light" style="background-color: #AFCBFF; shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <span class="brand-text font-weight-light">SportAve</span>
                 </a>
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{ route('boking.create') }}">Pesan Lapangan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('boking.index') }}">Transaksi</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -85,6 +91,9 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <footer class="p-3 mb-2 text-dark" style="background-color: #D3D3D3; shadow-sm">
+            @include('wfooter')
+        </footer>
     </div>
 </body>
 </html>

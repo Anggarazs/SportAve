@@ -51,11 +51,11 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Jenis Lapangan:</strong>
-                <select name="jenis_lapangan"  class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected></option>
-                    <option value="rumput">Rumput</option>
-                    <option value="matras">Matras</option>
+                    <label for="inputBayar">Pilih Lapangan</label>
+                    <select id="inputBayar" class="form-control" name="jenis_lapangan">
+                        <option selected>Pilih Lapangan...</option>
+                        <option value="rumput">Rumput</option>
+                        <option value="matras">Matras</option>
                 </select>
             </div>
         </div>

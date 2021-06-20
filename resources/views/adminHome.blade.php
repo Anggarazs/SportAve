@@ -88,40 +88,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="small-box bg-secondary">
               <div class="inner">
                 <p>Daftar Booking</p>
-                <h3 align="center">3</h3>
+                <h3 align="center">{{ $boking }}</h3>
               </div>
               <div class="icon">
                 <i class="fas fa fa-list"></i>
               </div>
-              <a href="home/kecamatans" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/admin/boking" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <div class="col-lg-4 col-6">
-            <!-- small box -->
-            <div class="small-box bg-primary">
-              <div class="inner">
-                <p>Transaksi</p>
-                <h3 align="center">3</h3>
-              </div>
-              <div class="icon">
-                <i class="fas fa fa-cart-plus"></i>
-              </div>
-              <a href="home/akomodasis" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <p>Jadwal</p>
-                <h3 align="center">29</h3>
-              </div>
-              <div class="icon">
-                <i class="fas fa-calendar-day"></i>
-              </div>
-              <a href="home/akomodasis" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
           </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->

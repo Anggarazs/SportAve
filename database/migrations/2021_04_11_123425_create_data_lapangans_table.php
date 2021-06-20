@@ -18,7 +18,7 @@ class CreateDataLapangansTable extends Migration
             $table->string('nama');
             $table->enum('jenis_lapangan', ['rumput', 'matras']);
             $table->integer('harga');
-            $table->string('foto_lapangan')->nullable();;
+            $table->string('foto_lapangan')->nullable();
             $table->timestamps();
         });
     }

@@ -14,9 +14,9 @@ class LapanganController extends Controller
     }
     public function index()
     {
-        $dt = dataLapangan::latest()->paginate(5);
+        $dt = dataLapangan::orderBy('id','asc')->simplePaginate(10);
         return view('dlapangan.index',compact('dt'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 10);
     }
     public function create()
     {

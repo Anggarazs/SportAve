@@ -36,7 +36,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/home/kecamatans" class="nav-link">
+            <a href="/admin/boking" class="nav-link">
               <i class="nav-icon fas fa fa-list"></i>
               <p>
                 Daftar Booking
@@ -44,18 +44,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/home/kecamatans" class="nav-link">
-              <i class="nav-icon fas fa fa-cart-plus"></i>
+            <a href="{{ url('/home') }}" class="nav-link">
+              <i class="nav-icon fas fa-clipboard-check"></i>
               <p>
-                Transaksi
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/home/akomodasis" class="nav-link">
-              <i class="nav-icon fas fa-calendar-day"></i>
-              <p>
-                Jadwal
+                Lihat Lapangan
               </p>
             </a>
           </li>
