@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
   
 use Illuminate\Http\Request;
 use App\Models\dataLapangan;
+use App\Models\Booking;
 use DB;
    
 class HomeController extends Controller
@@ -26,7 +27,8 @@ class HomeController extends Controller
     public function index()
     {
         $datalapangans = dataLapangan::orderBy('id','asc')->simplePaginate(3);
-        return view('home',compact('datalapangans'))
+        $jadwal = Booking::orderBy('id','asc')->simplePaginate(10);
+        return view('home',compact('datalapangans','jadwal'))
             ->with('i', (request()->input('page', 1) - 1) * 3);
     }
 

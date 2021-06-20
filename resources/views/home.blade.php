@@ -38,8 +38,48 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-      </div><br><br><br><br>
-      <h3>DAFTAR LAPANGAN SPORTAVE</h3> <br>
+      </div>
+      <br>
+      <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModal">
+        Lihat Jadwal
+       </button>
+       <!-- Modal -->
+       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">List Booking</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+               </button>
+             </div>
+             <div class="modal-body">
+               <table class="table table-hover">
+                 <tr>
+                     <th width="20px" class="text-center">No</th>
+                     <th>Nama Pemboking</th>
+                     <th>Tanggal</th>
+                     <th>Lapangan</th>
+                     <th>Waktu</th>
+                 </tr>
+                 @foreach ($jadwal as $booking)
+                 <tr>
+                     <td class="text-center">{{ $loop->iteration }}</td>
+                     <td>{{ $booking->nama }}</td>
+                     <td>{{ $booking->tanggal_booking }}</td>
+                     <td>{{ $booking->Lapangan->nama }}</td>
+                     <td>{{ $booking->awal }} - {{ $booking->akhir }}</td>
+                 </tr>
+                 @endforeach
+               </table>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             </div>
+           </div>
+         </div>
+       </div>
+      <br><br>      <h3>DAFTAR LAPANGAN SPORTAVE</h3> <br>
             <div class="card-deck">
             @foreach ($datalapangans as $datalapangan)
                 <div class="card">
