@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.utama')
 
 @section('content')
 <div class="container">

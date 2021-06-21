@@ -15,13 +15,12 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/design.css') }}" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: rgb(135, 208, 250)">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar navbar-light" style="background-color: #AFCBFF; shadow-sm">
             <div class="container">
@@ -37,22 +36,41 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{ route('boking.create') }}">Pesan Lapangan</a>
+                            @if (Route::has('login'))
+                                @if(Auth::check() && Auth::user()->admin == 1)
+                                <a class="nav-link" href="/home">Beranda</a>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/admin/dashboard">Dashboard</a>
+                                </li>
+                                @else
+                                <a class="nav-link" href="/home">Beranda</a>
+                                @endif
+                            @endif
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Transaksi</a>
+                            <a class="nav-link" href="{{ route('boking.create') }}">Pesan Lapangan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('boking.index') }}">Transaksi</a>
                         </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        @if(Auth::check() && Auth::user()->admin == 1)
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('admin/dashboard') }}">{{ __('Dashboard') }}</a>
-                            </li>
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
                             
-                        @elseif(Auth::check() && Auth::user()->admin != 1)
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -77,19 +95,7 @@
                                     </form>
                                 </div>
                             </li>
-                        @else
-                            @if (Route::has('login'))
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                    </li>
-                                @endif
-                                
-                                @if (Route::has('register'))
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                    </li>
-                                @endif
-                        @endif
+                        @endguest
                     </ul>
                 </div>
             </div>
@@ -98,21 +104,9 @@
         <main class="py-4">
             @yield('content')
         </main>
-        <hr>
         <footer class="p-3 mb-2 text-dark" style="background-color: #D3D3D3; shadow-sm">
             @include('wfooter')
         </footer>
-
     </div>
-    <script src="/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="/vendor/aos/aos.js"></script>
-    <script src="/vendor/php-email-form/validate.js"></script>
-    <script src="/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="/vendor/purecounter/purecounter.js"></script>
-    <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="/vendor/glightbox/js/glightbox.min.js"></script>
-  
-    <!-- Template Main JS File -->
-    <script src="/js/main.js"></script>
 </body>
 </html>
