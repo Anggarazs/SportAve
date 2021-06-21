@@ -23,27 +23,37 @@
               <body style="background-color: rgb(135, 208, 250)">
                 <div class="container" >
                   <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <h5 style="text-align: center;">Transaksi Pembayaran</h5><br><br>
+                    <div class="col-md-12">
+                        <div class="card-header">
+                        <h5 style="text-align: center;">Transaksi Pembayaran</h5></div>
+                        
                         
                         @foreach($transaksi as $t)
-                        <form action="{{ route('boking.show',$t->booking_id) }}">
-                            <div class="form-group">
-                                <label for="inputNama">Total : {{$t->total}}</label>
-                                @if ($t->bukti==Null)
-                                <button type="submit" class="btn btn-primary">
-                                  Konfirmasi Pembayaran
-                                </button>
-                        
-                                @else
-                                <div class="badge m-1 {{($t->konfirmasi == 'Berhasil')? "badge-success": (($t->konfirmasi == "Gagal")? "badge-danger": "badge-warning")}}">
-                                    {{($t->konfirmasi == 'Berhasil')? "Berhasil": (($t->konfirmasi == "Gagal")? "Gagal": "Proses")}}
-                                </div>
-                                @endif
-                                <br>
+                        <form action="{{ route('boking.show',$t->booking_id) }}" style="max-width: none">
+                          <div class="form-group">
+                              <label for="inputNama" class="d-block p-2 bg-secondary text-white">Total Harga : Rp. {{$t->total}}</label>
+                            @if ($t->bukti==Null)
+                              <button type="submit" class="btn btn-primary btn-block">
+                                Konfirmasi Pembayaran
+                              </button>
+                          </div>
+                            @else
+                            {{-- <div class="badge m-1 {{($t->konfirmasi == 'Berhasil')? "alert alert-success": (($t->konfirmasi == "Gagal")? "badge-danger": "badge-warning")}}">
+                                {{($t->konfirmasi == 'Berhasil')? "berhasil": (($t->konfirmasi == "Gagal")? "Gagal": "Proses")}}
+                            </div> --}}
+                              <div class="{{($t->konfirmasi == 'Berhasil')? "alert alert-success": (($t->konfirmasi == "Gagal")? "alert alert-danger": "alert alert-warning")}}" role="alert">
+                                <h4 class="alert-heading">{{($t->konfirmasi == 'Berhasil')? "Transaksi Berhasil": (($t->konfirmasi == "Gagal")? "Transaksi Gagal": "Proses")}}</h4>
+                                <p class="text-justify">
+                                    {{($t->konfirmasi == 'Berhasil')?
+                                      "Proses transaksi disetujui oleh admin SportAve. Tunjukkan hasil transaksi ini kepada admin sebagai bukti bahwa anda telah melakukan tahap akhir dari pembayaran. Terima Kasih!" :
+                                    (($t->konfirmasi == "Gagal")?
+                                      "Proses transaksi tidak dapat disetujui oleh admin SportAve karena terdapat data yang tidak semestinya. Silahkan lakukan booking ulang lapangan " : 
+                                      "Transaksi sedang di proses, silahkan tunggu hasil keputusan admin selanjutnya.")}}
+                                </p>
                               </div>
-                          </form>
-                          @endforeach   
+                            @endif
+                        </form>
+                        @endforeach
                              
           </div>
         </div>

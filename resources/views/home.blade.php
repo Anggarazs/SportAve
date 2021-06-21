@@ -9,24 +9,24 @@
         </ol>
         <div class="carousel-inner" >
           <div class="carousel-item active">
-            <img src="/img/futsal.jpeg" class="d-block w-100 h-50" alt="...">
+            <img src="/img/1.jpg" class="d-block w-100 h-50" style="object-fit: cover;" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
+              <h1><b>SportAve</b></h1>
+              <p><h5>SportAve hadir sebagai solusi terbaik dalam melakukan pemesanan lapangan futsal dengan mudah dan cepat</h5></p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="/img/futsal.jpeg" class="d-block w-100 h-50" alt="...">
+            <img src="/img/2.jpg" class="d-block w-100 h-50" style="object-fit: cover;" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
+              <h1><b>SportAve</b></h1>
+              <p><h5>Sempurnakan bakat anda bersama SportAve</h5></p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="/img/futsal.jpeg" class="d-block w-100 h-50" alt="...">
+            <img src="/img/3.jpg" class="d-block w-100 h-50" style="object-fit: cover;" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
+              <h1><b>SportAve</b></h1>
+              <p><h5>Futsal? Ya SportAve!</h5></p>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@
         </a>
       </div>
       <br>
-      <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">
         Lihat Jadwal
        </button>
        <!-- Modal -->
@@ -91,7 +91,7 @@
                           Harga per Jam : {{ $datalapangan->harga }}
                         
                       </p>
-                        <a href="/boking/create" class="cutton btn-primary">Booking Sekarang</a>
+                        <a href="/boking/create" class="btn btn-outline-primary btn-block">Booking Sekarang</a>
                     </div>
                 </div>
               @endforeach

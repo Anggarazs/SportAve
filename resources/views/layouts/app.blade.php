@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/design.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -35,7 +36,19 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{{ route('boking.create') }}">Pesan Lapangan</a>
+                            @if (Route::has('login'))
+                                @if(Auth::check() && Auth::user()->admin == 1)
+                                <a class="nav-link" href="/home">Beranda</a>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/admin/dashboard">Dashboard</a>
+                                </li>
+                                @else
+                                <a class="nav-link" href="/home">Beranda</a>
+                                @endif
+                            @endif
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('boking.create') }}">Pesan Lapangan</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('boking.index') }}">Transaksi</a>

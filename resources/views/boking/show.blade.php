@@ -17,7 +17,7 @@
             <div class="col-md-5">
               <img src="/img/login.png" alt="login" class="login-card-img">
             </div>
-            <div class="col-md-7 p-4">
+            <div class="col-md-7">
               <div class="card">
                 <div class="card-header">
 
@@ -52,6 +52,10 @@
                         <div class="row">
                           <div class="col-sm-4">Waktu Selesai</div>
                           <div class="col-sm-8">:  {{$booking->akhir}}</div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-4">Lapangan</div>
+                          <div class="col-sm-8">:  {{$booking->lapangan->nama}}</div>
                         </div>
                         <div class="row">
                           <div class="col-sm-4">Metode Pembayaran </div>
@@ -102,9 +106,9 @@
                   border: red 1px solid !important;
                 }
                 </style> --}}
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> --}}
   </body>
   @endsection
   

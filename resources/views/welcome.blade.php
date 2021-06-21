@@ -36,21 +36,26 @@
             <img src="/img/logo.png" alt="">
             <span>Sport Ave</span>
           </a>
-      <div class="relative flex items-top justify-center min-h-screen bg-gray-100 ligth:bg-gray-900 sm:items-center py-4 sm:pt-0">
+      <div class="relative flex items-top justify-center min-h-screen bg-gray-100 ligth:bg-gray900 sm:items-center py-4 sm:pt-0">
           @if (Route::has('login'))
-              <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                <a href="{{ route('boking.create') }}" class="text-sm text-dark-700 underline">Pesan Lapangan</a>&emsp;
-                <a href="#" class="text-sm text-dark-700 underline">Transaksi</a>&emsp;
-                  @if(Auth::check() && Auth::user()->admin == 1)
-                     <a href="{{ url('admin/dashboard') }}" class="text-sm text-dark-700 underline">Dashboard</a>
-                  @elseif(Auth::check() && Auth::user()->admin != 1)
-                      <a href="{{ url('/home') }}" class="text-sm text-dark-700 underline">Lihat Lapangan</a>&emsp;
-                  @else
-                      <a href="{{ route('login') }}" class="text-sm text-dark-700 underline">Log in</a>&emsp;
-                      @if (Route::has('register'))
-                          <a href="{{ route('register') }}" class="ml-4 text-sm text-dark-700 underline btn btn-primary btn-sm">Register</a>
-                      @endif
-                  @endif
+          <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                @if(Auth::check() && Auth::user()->admin == 1)
+                   <a href="{{ url('/home') }}" class="text-sm text-dark-700 underline">Beranda</a>&emsp;
+                   <a href="{{ url('admin/dashboard') }}" class="text-sm text-dark-700 underline">Dashboard</a>&emsp;
+                   <a href="{{ route('boking.create') }}" class="text-sm text-dark-700 underline">Pesan Lapangan</a>&emsp;
+                   <a href="/boking" class="text-sm text-dark-700 underline">Transaksi</a>&emsp;
+                @elseif(Auth::check() && Auth::user()->admin != 1)
+                    <a href="{{ url('/home') }}" class="text-sm text-dark-700 underline">Beranda</a>&emsp;
+                    <a href="{{ route('boking.create') }}" class="text-sm text-dark-700 underline">Pesan Lapangan</a>&emsp;
+                    <a href="/boking" class="text-sm text-dark-700 underline">Transaksi</a>&emsp;
+                @else
+                    <a href="{{ route('boking.create') }}" class="text-sm text-dark-700 underline">Pesan Lapangan</a>&emsp;
+                    <a href="/boking" class="text-sm text-dark-700 underline">Transaksi</a>&emsp;
+                    <a href="{{ route('login') }}" class="text-sm text-dark-700 underline">Log in</a>&emsp;
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="ml-4 text-sm text-dark-700 underline btn btn-primary btn-sm">Register</a>
+                    @endif
+                @endif
               </div>
           @endif
       </div>

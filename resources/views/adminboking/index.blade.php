@@ -64,7 +64,7 @@
                     @csrf
                     @method('PUT')
                     <input type="hidden" name="konfirmasi" value="Gagal">
-                    <button type="submit" class="btn btn-warning btn-sm" onclick="return confirm('Apakah Anda yakin ingin membatalkan data ini?')">Tidak Sesuai</button>
+                    <button type="submit" class="btn btn-warning btn-sm" onclick="return confirm('Apakah Anda yakin ingin membatalkan data ini?')">Tolak</button>
                   </form>  
                 </div>
                 @endif     
