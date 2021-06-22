@@ -1,13 +1,5 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
 @extends('layouts.app')
-   
 @section('content')
-
 <div class="container">
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -17,24 +9,24 @@
         </ol>
         <div class="carousel-inner" >
           <div class="carousel-item active">
-            <img src="/img/futsal.jpeg" class="d-block w-100 h-50" alt="...">
+            <img src="/img/1.jpg" class="d-block w-100 h-50" style="object-fit: cover;" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
+              <h1><b>SportAve</b></h1>
+              <p><h5>SportAve hadir sebagai solusi terbaik dalam melakukan pemesanan lapangan futsal dengan mudah dan cepat</h5></p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="/img/futsal.jpeg" class="d-block w-100 h-50" alt="...">
+            <img src="/img/2.jpg" class="d-block w-100 h-50" style="object-fit: cover;" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
+              <h1><b>SportAve</b></h1>
+              <p><h5>Sempurnakan bakat anda bersama SportAve</h5></p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="/img/futsal.jpeg" class="d-block w-100 h-50" alt="...">
+            <img src="/img/3.jpg" class="d-block w-100 h-50" style="object-fit: cover;" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
+              <h1><b>SportAve</b></h1>
+              <p><h5>Futsal? Ya SportAve!</h5></p>
             </div>
           </div>
         </div>
@@ -46,49 +38,76 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
-      </div><br><br><br><br>
-      <h3>DAFTAR LAPANGAN SPORTAVE</h3> <br>
+      </div>
+      <br>
+      <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">
+        Lihat Jadwal
+       </button>
+       <!-- Modal -->
+       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">List Booking</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+               </button>
+             </div>
+             <div class="modal-body">
+               <table class="table table-hover">
+                 <tr>
+                     <th width="20px" class="text-center">No</th>
+                     <th>Nama Pemboking</th>
+                     <th>Tanggal</th>
+                     <th>Lapangan</th>
+                     <th>Waktu</th>
+                 </tr>
+                 @foreach ($jadwal as $booking)
+                 <tr>
+                     <td class="text-center">{{ $loop->iteration }}</td>
+                     <td>{{ $booking->nama }}</td>
+                     <td>{{ $booking->tanggal_booking }}</td>
+                     <td>{{ $booking->Lapangan->nama }}</td>
+                     <td>{{ $booking->awal }} - {{ $booking->akhir }}</td>
+                 </tr>
+                 @endforeach
+               </table>
+             </div>
+             <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             </div>
+           </div>
+         </div>
+       </div>
+      <br><br>      <h3>DAFTAR LAPANGAN SPORTAVE</h3> <br>
             <div class="card-deck">
+            @foreach ($datalapangans as $datalapangan)
                 <div class="card">
-                    <img class="card-img-top" src= "/img/futsal.jpeg" alt="">
+                    <img src="{{ asset('/img/'. $datalapangan->foto_lapangan ) }}">  
                     <div class="card-body">
-                        <h5 class="card-title">Lapangan Futsal</h5>
-                        <p class="card-text">Lapangan futsal ini bla bla</p>
-                        <a href="#" class="cutton btn-primary">Booking Sekarang</a>
+                        <h5 class="card-title">{{ $datalapangan->nama }}</h5>
+                        <p class="card-text">
+                          Jenis Lapngan : {{ $datalapangan->jenis_lapangan }}<br>
+                          Harga per Jam : {{ $datalapangan->harga }}
+                        
+                      </p>
+                        <a href="/boking/create" class="btn btn-outline-primary btn-block">Booking Sekarang</a>
                     </div>
                 </div>
-
-                <div class="card">
-                    <img class="card-img-top" src= "/img/bl tangkis lap.jpg" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Lapangan Bulu Tangkis</h5>
-                        <p class="card-text">Lapangan bulu tangkis ini bla bla</p>
-                        <a href="#" class="cutton btn-primary">Booking Sekarang</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="card-img-top" src= "/img/tenis lap.jpg" alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Tenis Lapangan</h5>
-                        <p class="card-text">Tenis lapangan ini bla bla</p>
-                        <a href="#" class="cutton btn-primary">Booking Sekarang</a>
-                    </div>
-                </div>
-
+              @endforeach
             </div>
+            <div class="card-footer">
+                {{ $datalapangans->links() }}
+                
+            </div>
+
 
         </div>
 </div>
-<div class="container">
-    <center>
-    <div class="copyright">
-      &copy; Copyright <strong><span>Sport Ave</span></strong>. All Rights Reserved
-    </div>
-    </center>
-</div>
-@endsection
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+@endsection
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
 

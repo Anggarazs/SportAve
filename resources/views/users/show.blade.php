@@ -11,7 +11,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="admin">Home</a></li>
-              <li class="breadcrumb-item active">Data Admin</li>
+              <li class="breadcrumb-item active">Data User</li>
             </ol>
           </div><!-- /.col -->
       </div><!-- /.container-fluid -->
@@ -35,6 +35,12 @@
             <div class="form-group">
                 <strong>Email :</strong>
                 {{ $user->email }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Alamat :</strong>
+                {{ $user->alamat }}
             </div>
         </div>
     </div>

@@ -46,7 +46,11 @@
         </tr>
         @endforeach
     </table>
+    <div class="card-footer">
+         {{ $users->links() }}
+        
+    </div>
  
-    {!! $users->links() !!}
+       
  
 @endsection
