@@ -1,0 +1,13 @@
+section{
+    padding: 60px 0;
+    overflow: hidden;
+}
+.hero{
+    margin-top: 10%;
+}
+.row-centered{
+    text-align: center;
+}
+.col-centered{
+    margin-left: 20%;
+}
