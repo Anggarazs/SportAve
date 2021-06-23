@@ -16,7 +16,7 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        $Booking= Booking::orderBy('id','asc')->simplePaginate(10);
+        $Booking= Booking::latest()->simplePaginate(10);
         return view('adminboking.index',compact('Booking'))
             ;
     }

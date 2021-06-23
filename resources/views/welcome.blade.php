@@ -102,43 +102,42 @@
           <p>Contact Us</p>
         </header>
 
-        <div class="row gy-4">
+        <div class="row gy-4 ">
 
-          <div class="col-lg-6">
+          <div class="col-lg-12">
 
             <div class="row gy-4">
-              <div class="col-md-6">
+              <div class="col-md-3">
                 <div class="info-box">
                   <i class="bi bi-geo-alt"></i>
                   <h3>Alamat</h3>
                   <p>Jl. Ahmad Yani,<br>Balikpapan, Kaltim, 535022</p>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-3">
                 <div class="info-box">
                   <i class="bi bi-telephone"></i>
                   <h3>Telepon</h3>
                   <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-3">
                 <div class="info-box">
                   <i class="bi bi-envelope"></i>
                   <h3>Email</h3>
                   <p>sportave@gmail.com</p>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-3">
                 <div class="info-box">
                   <i class="bi bi-clock"></i>
                   <h3>Jam Buka</h3>
-                  <p>Setiap Hari<br>8:00AM - 05:00PM</p>
+                  <p>Setiap Hari<br>9:00AM - 24:00PM</p>
                 </div>
               </div>
             </div>
 
           </div>
-
 
           </div>
 

@@ -63,7 +63,7 @@ class BokingController extends Controller
             'awal' => $request->awal,
             'akhir' => $request->akhir,
             'data_lapangan_id' => $request->data_lapangan_id,
-            'pembayaran' => $request->pembayaran,
+            'bayar' => $request->bayar,
             'user_id' => auth()->id(),
 
         ]); 
@@ -92,6 +92,7 @@ class BokingController extends Controller
 
         return view('boking.show', compact('booking'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
