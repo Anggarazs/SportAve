@@ -1,4 +1,4 @@
-@extends('utama.app')
+@extends('layouts.utama')
 
 @section('content')
 
