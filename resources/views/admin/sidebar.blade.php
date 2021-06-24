@@ -20,6 +20,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ url('/home') }}" class="nav-link">
+              <i class="nav-icon fas fa-home"></i>
+              <p>
+                Beranda
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="/admin/users" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
@@ -40,14 +48,6 @@
               <i class="nav-icon fas fa fa-list"></i>
               <p>
                 Daftar Booking
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ url('/home') }}" class="nav-link">
-              <i class="nav-icon fas fa-clipboard-check"></i>
-              <p>
-                Lihat Lapangan
               </p>
             </a>
           </li>

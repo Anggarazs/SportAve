@@ -43,10 +43,28 @@
                    <a href="{{ url('admin/dashboard') }}" class="text-sm text-dark-700 underline">Dashboard</a>&emsp;
                    <a href="{{ route('boking.create') }}" class="text-sm text-dark-700 underline">Pesan Lapangan</a>&emsp;
                    <a href="/boking" class="text-sm text-dark-700 underline">Transaksi</a>&emsp;
+                   <a href="{{ route('logout') }}" class="text-sm text-dark-700 underline"   onclick="event.preventDefault();
+                   document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                    </form>
+                  </a>&emsp;
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                  </form>
                 @elseif(Auth::check() && Auth::user()->admin != 1)
                     <a href="{{ url('/home') }}" class="text-sm text-dark-700 underline">Beranda</a>&emsp;
                     <a href="{{ route('boking.create') }}" class="text-sm text-dark-700 underline">Pesan Lapangan</a>&emsp;
                     <a href="/boking" class="text-sm text-dark-700 underline">Transaksi</a>&emsp;
+                    <a href="{{ route('logout') }}" class="text-sm text-dark-700 underline"   onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                      {{ __('Logout') }}
+                    </a>&emsp;
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                    </form>
+                    
                 @else
                   <a href="{{ url('/home') }}" class="text-sm text-dark-700 underline">Beranda</a>&emsp;
                     <a href="{{ route('boking.create') }}" class="text-sm text-dark-700 underline">Pesan Lapangan</a>&emsp;

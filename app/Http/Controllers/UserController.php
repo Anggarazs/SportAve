@@ -15,7 +15,7 @@ class UserController extends Controller
     }
     public function index()
     {
-        $users = User::orderBy('id','asc')->simplePaginate(10);
+        $users = User::latest()->simplePaginate(10);
         return view('users.index',compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * 10);
     }
