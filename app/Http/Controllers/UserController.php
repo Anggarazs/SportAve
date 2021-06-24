@@ -62,7 +62,7 @@ class UserController extends Controller
             $user->alamat = $request['alamat'];
 
             $user->save();
-            return redirect()->back()->with('success','user Edited successfully.');
+            return redirect('edituser')->with('success','user Edited successfully.');
             
 
         }

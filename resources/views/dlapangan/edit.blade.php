@@ -53,7 +53,7 @@
             <div class="form-group">
                     <label for="inputBayar">Pilih Lapangan</label>
                     <select id="inputBayar" class="form-control" name="jenis_lapangan">
-                        <option selected>Pilih Lapangan...</option>
+                        <option selected value="{{ $dt->jenis_lapangan }}">Pilih Lapangan...</option>
                         <option value="rumput">Rumput</option>
                         <option value="matras">Matras</option>
                 </select>

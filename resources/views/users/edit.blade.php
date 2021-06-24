@@ -22,6 +22,16 @@
                 <div class="card-body">
                   <div class="brand-wrapper">
                   <p class="login-card-title">Edit User</p>
+                  @if ($errors->any())
+                <div class="alert alert-danger">
+                        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
                 <div class="card-body">
                 <form action="{{ route('users.update') }}" method="POST">
